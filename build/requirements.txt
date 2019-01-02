@@ -1,0 +1,4 @@
+Flask==1.0.2
+connexion==2.2.0
+pymongo==3.7.2
+connexion[swagger-ui]

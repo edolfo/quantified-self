@@ -1,0 +1,28 @@
+swagger: "2.0"
+info:
+  description: Hckrlabs Quantified Self API server
+  version: 0.0.1
+  title: Hckrlabs Quantified Self API server
+  license:
+    name: MIT
+basePath: "/api"
+tags:
+- name: "group"
+  description: "An activity grouping"
+consumes:
+  - application/json
+produces:
+  - application/json
+schemes:
+  - "https"
+  - "http"
+paths:
+  /groups:
+    get:
+      tags:
+        - group
+      summary: Get a listing of all known groups
+      operationId: api.controllers.groups.lst
+      responses:
+        200:
+          description: successful op

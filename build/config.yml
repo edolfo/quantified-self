@@ -1,0 +1,4 @@
+mongo:
+    connection_string: "mongodb://quantselfdb:27017"
+    db_name: quantself
+

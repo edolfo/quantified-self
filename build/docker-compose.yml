@@ -1,0 +1,36 @@
+version: '3'
+services:
+  app:
+    hostname: hckrlabs-quant-self
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash
+    environment:
+      - CONFIG_PATH=/app/build/config.yml
+    ports:
+      - "6001:6001"
+      - "6002:6002"
+      - "6003:6003"
+    volumes:
+      - "..:/app:rw"
+      - "/scratch"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    networks:
+      hckrlabs-quant-self:
+  mongo:
+    image: mongo:4.1.1
+    ports:
+      - "27019:27017"
+    networks:
+      hckrlabs-quant-self:
+        aliases:
+          - quantselfdb
+networks:
+  hckrlabs-quant-self:
+    external:
+      name: hckrlabs-quant-self
+

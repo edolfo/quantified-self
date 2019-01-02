@@ -1,0 +1,13 @@
+{
+  "exec": "cd /app/src && /usr/bin/env python3 -m api",
+  "ext": "py,yml",
+  "verbose": true,
+  "watch": [
+    "/app/src/api",
+    "/app/src/lib"
+  ],
+  "ignore": [
+    "**/__pycache__/**",
+    "**/generated.api.yml"
+  ]
+}
